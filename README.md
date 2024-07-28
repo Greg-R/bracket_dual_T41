@@ -17,11 +17,11 @@ An STL file is included in the repository in addition to the Freecad design file
 The dual bracket is intended to allow a special combination of the QSE, QSD, and Si5351 modules.
 More specifically, the QSD2 and QSE2 modules which need a very short path from the Si5351 outputs
 to the divide-by-two quadrature generator circuits onboard the QSD2 and QSE2.  These digital circuits
-need nice sharp edges, and the shunt capacitance should be kept to a bare minimum.  The Si5351 outputs
+need nice sharp waveforms, and the shunt capacitance should be kept to a bare minimum.  The Si5351 outputs
 square waves, however, the drive power available is minimal, thus the necessity to keep loading as
 low as possible.
 
-Here a picture is worth a thousand words so here are four photos of the super-module:
+A picture is worth a thousand words so here are four photos of the super-module:
 
 <https://drive.google.com/file/d/1rV6BOOSUC20Zmh-siNASb-947YQ3AUHL/view?usp=sharing>
 
@@ -48,14 +48,14 @@ Here are photos showing the how the Si5351 module looks in the radio:
 ### Cheap Si5351 Modules
 
 Using an Si5351 module instead soldering it to the Main board solves several problems
-simulataneously.  The Si5351 device is notoriously difficult to solder, as it uses very find pitch leads.
+simultaneously.  The Si5351 device is notoriously difficult to solder, as it uses very fine pitch leads.
 The small 25 MHz crystal is also difficult to properly solder, and it can be damaged by overheating.
-The module has these parts already to go including regulators and decoupling.  Even better is the RF
+The module has these parts ready to go including regulators and decoupling.  Even better, the RF
 connectors are included!  Here is the module I used from Amazon:
 
 <https://www.amazon.com/gp/product/B09DM96KGS>
 
-The connectors are included!  Note that the two outer outputs are used, ClK0 and CLK2.
+Note that the two outer outputs are used, ClK0 and CLK2.
 The output in the center, CLK1, is not used.
 
 I used these double-male 90 degree adapters for attaching the Si5351 module to the assembly:
@@ -75,13 +75,16 @@ The T41EEE firmware for the T41 transceiver can be configured for the QSD2/QSE2 
 
 In the file MyConfigurationFile.h:
 
+```
 // Uncomment this line if using an external PLL module.
 //#define PLLMODULE
+```
 
 all you have to do is uncomment one line:
-
+```
 // Uncomment this line if using an external PLL module.
 #define PLLMODULE
+```
 
 This will cause the Si5351 module to be programmed to use the CLK0 and CLK2 outputs as
 required for transmit, receive, and calibration.
