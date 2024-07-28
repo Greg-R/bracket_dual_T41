@@ -1,6 +1,6 @@
 # Dual Bracket for T41 Modules
 
- ![Dual Bracket](./Dual_Bracket.pdf)
+ ![Dual Bracket](./Dual_Bracket.png)
 
 This is a Freecad file design of a dual bracket for the T41 Software Defined Transceiver.
 This bracket was designed to hold a QSD and a QSE module, however, it could be used to combine
