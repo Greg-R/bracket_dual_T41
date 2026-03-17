@@ -80,7 +80,7 @@ In the file MyConfigurationFile.h:
 //#define PLLMODULE
 ```
 
-all you have to do is uncomment one line:
+All you have to do is uncomment one line:
 ```
 // Uncomment this line if using an external PLL module.
 #define PLLMODULE
